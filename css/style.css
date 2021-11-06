@@ -76,7 +76,7 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------*/
 body {
   background-color: #5c5b5b;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
 }
 
 .wrapper-ex1 {
@@ -117,4 +117,41 @@ body {
   border-radius: 40px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.wrapper-ex2 {
+  text-align: center;
+}
+
+.progress-step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: black;
+}
+
+.progress-step__number {
+  display: inline-block;
+  width: 40px;
+  line-height: 36px;
+  border-radius: 20px;
+  text-align: center;
+  border: gray solid 2px;
+  background-color: gray;
+}
+
+.progress-step__line {
+  width: 120px;
+  height: 2px;
+  background-color: gray;
+}
+
+.progress-step__active {
+  border: #8080ff solid 2px;
 }
