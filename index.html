@@ -3,39 +3,42 @@
 <!-- Оболочка документа, указываем язык содержимого -->
 <html lang="ru">
 <!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+
 <head>
-<!-- Заголовок страницы в браузере -->
-<title>CSS. Часть №6 (псевдоклассы)</title>
-<!-- Подключаем CSS -->
-<link rel="stylesheet" href="css/style.css" />
-<!-- Кодировка страницы -->
-<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <!-- Заголовок страницы в браузере -->
+    <title>CSS. Часть №6 (псевдоклассы)</title>
+    <!-- Подключаем CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Кодировка страницы -->
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 </head>
 <!-- Отображаемое тело страницы -->
+
 <body>
-<div class="wrapper-ex1">
-    <ul class="slider">
-        <li class="slider__inner-img"><img src="./img/1.jpg" alt="" class=""></li>
-        <li class="slider__inner-img slider__active"><img src="./img/2.jpg" alt="" class=""></li>
-        <li class="slider__inner-img"><img src="./img/3.jpg" alt="" class=""></li>
-        <li class="slider__inner-img"><img src="./img/4.jpg" alt="" class=""></li>
-        <li class="slider__inner-img"><img src="./img/5.jpg" alt="" class=""></li>
-    </ul>
-</div>
-<div class="wrapper-ex2">
-    <ul class="progress-step">
-        <li class="progress-step__number progress-step__active">1</li>
-        <li class="progress-step__line"></li>
-        <li class="progress-step__number">2</li>
-        <li class="progress-step__line"></li>
-        <li class="progress-step__number">3</li>
-        <li class="progress-step__line"></li>
-        <li class="progress-step__number">4</li>
-    </ul>
-    <button class="left">left</button>
-    <button class="right">right</button>
-</div>
-<br>
-<script src="./js/script.js"></script>
+    <div class="wrapper-ex1">
+        <ul class="slider">
+            <li class="slider__inner-img"><img src="./img/1.jpg" alt="" class=""></li>
+            <li class="slider__inner-img slider__active"><img src="./img/2.jpg" alt="" class=""></li>
+            <li class="slider__inner-img"><img src="./img/3.jpg" alt="" class=""></li>
+            <li class="slider__inner-img"><img src="./img/4.jpg" alt="" class=""></li>
+            <li class="slider__inner-img"><img src="./img/5.jpg" alt="" class=""></li>
+        </ul>
+    </div>
+    <div class="wrapper-ex2">
+        <div class="progress-step">
+            <ul>
+                <li class="progress-step__line"></li>
+                <li class="progress-step__number progress-step__active">1</li>
+                <li class="progress-step__number">2</li>
+                <li class="progress-step__number">3</li>
+                <li class="progress-step__number">4</li>
+            </ul>
+            <button class="progress-step__left">left</button>
+            <button class="progress-step__right">right</button>
+        </div>
+    </div>
+    <br>
+    <script src="./js/script.js"></script>
 </body>
+
 </html>

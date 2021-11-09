@@ -27,44 +27,75 @@ let images = new ExpandingCards(document.querySelectorAll('.slider__inner-img'))
 images.activate();
 
 class ProgressSteps {
-    constructor(innerElements, buttons) {
-        this.innerElements = innerElements;
+    constructor(innerUl, buttons) {
+        this.innerUl = innerUl;
         this.buttons = buttons;
-
+        
         this.firstElement = 1;
-        this.secondElement = 2;
+        this.currentLineWidth = 0;
+        
+    }
+
+    calculateParamets() {
+        console.log(this.innerUl)
+        this.innerElements = this.innerUl.children
+
+        this.stepWidth = ~~(100 / (this.innerElements.length - 2)) // get % to increase width
+        this.progressLine = this.innerElements[0]; // Line goes first in UL
     }
 
     moveRight() {
-        if (this.secondElement === this.innerElements.length) return;
+        if (this.firstElement === this.innerElements.length -1) return;
+
         this.firstElement += 1;
-        this.secondElement += 1;
+        this.innerElements[this.firstElement].classList.add('progress-step__active');
+
+        this.currentLineWidth += this.stepWidth;
+        this.innerElements[0].style.width = this.currentLineWidth + '%';
     }
 
     moveLeft() {
+        // this.buttons[0].disabled = (this.currentLineWidth === 0) ?  true : false;
+        // this.buttons[1].disabled = (this.currentLineWidth === this.stepWidth * this.innerElements.length) ?  true : false;
+
         if (this.firstElement === 1) return;
+        this.innerElements[this.firstElement].classList.remove('progress-step__active');
         this.firstElement -= 1;
-        this.secondElement -= 1;
+
+        this.currentLineWidth -= this.stepWidth;
+        this.innerElements[0].style.width = this.currentLineWidth + '%';
     }
 
-    addIventsToButtons() {
-        this.buttons[0].addEventListener('click', () => {
-            this.moveLeft();
-        })
+    checkButtonsStatus() {
+        this.buttons[0].disabled = (this.currentLineWidth === 0) ?  true : false;
+        this.buttons[1].disabled = (this.currentLineWidth === this.stepWidth * (this.innerElements.length - 2)) ?  true : false;
+    }
 
+    addEventsToButtons() {
         this.buttons[1].addEventListener('click', () => {
             this.moveRight();
+            this.checkButtonsStatus()
+
+        })
+
+        this.buttons[0].addEventListener('click', () => {
+            this.moveLeft();
+            this.checkButtonsStatus()
         })
     }
 
-
-
-
+    activate() {
+        this.calculateParamets();
+        this.checkButtonsStatus()
+        this.addEventsToButtons()
+    }
 }
-// const innerElements = document.querySelector('.progress-step').children;
-// let [firstElement, secondElement] = [1, 2];
-// innerElements[firstElement].classList.toggle('progress-step__active');
-// innerElements[secondElement].classList.toggle('progress-step__active');
 
 
+const collect1 = document.querySelector("body > div.wrapper-ex2 > div > ul");
+// const collect1 = document.querySelector("body > div.wrapper-ex2 > div > ul").parentElement;
+const buttons1 = document.querySelectorAll('body > div.wrapper-ex2 > div > button');
+let test1 = new ProgressSteps(collect1, buttons1);
+
+test1.activate()
 
