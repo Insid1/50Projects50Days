@@ -95,7 +95,36 @@ class ProgressSteps {
 const collect1 = document.querySelector("body > div.wrapper-ex2 > div > ul");
 // const collect1 = document.querySelector("body > div.wrapper-ex2 > div > ul").parentElement;
 const buttons1 = document.querySelectorAll('body > div.wrapper-ex2 > div > button');
-let test1 = new ProgressSteps(collect1, buttons1);
 
+let test1 = new ProgressSteps(collect1, buttons1);
 test1.activate()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
