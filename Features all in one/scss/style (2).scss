@@ -83,7 +83,7 @@ body {
     }
 
     &__active {
-        border: rgb(37, 37, 148) solid 2px;
+        border: blue solid 2px;
     }
 
     &__line {
@@ -94,7 +94,7 @@ body {
         transition: all 0.3s linear;
         width: 0;
         height: 2px;
-        background-color: rgb(37, 37, 148);
+        background-color: blue;
         z-index: -1;
     }
 

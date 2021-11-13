@@ -172,7 +172,7 @@ body {
 }
 
 .progress-step__active {
-  border: #252594 solid 2px;
+  border: blue solid 2px;
 }
 
 .progress-step__line {
@@ -185,7 +185,7 @@ body {
   transition: all 0.3s linear;
   width: 0;
   height: 2px;
-  background-color: #252594;
+  background-color: blue;
   z-index: -1;
 }
 

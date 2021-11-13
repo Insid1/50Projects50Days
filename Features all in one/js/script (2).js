@@ -1,6 +1,6 @@
 'use strict'
 
-class ExpandingCards { // js class for 1st exercies
+class ExpandingCards {
     constructor(slider) {
         this.slider = slider;
     }
@@ -23,11 +23,10 @@ class ExpandingCards { // js class for 1st exercies
 }
 
 let images = new ExpandingCards(document.querySelectorAll('.slider__inner-img'));
+
 images.activate();
 
-
-
-class ProgressSteps { // js class for 1st exercies
+class ProgressSteps {
     constructor(innerUl, buttons) {
         this.innerUl = innerUl;
         this.buttons = buttons;
@@ -92,38 +91,11 @@ class ProgressSteps { // js class for 1st exercies
     }
 }
 
+
 const collect1 = document.querySelector("body > div.wrapper-ex2 > div > ul");
+// const collect1 = document.querySelector("body > div.wrapper-ex2 > div > ul").parentElement;
 const buttons1 = document.querySelectorAll('body > div.wrapper-ex2 > div > button');
-
 let test1 = new ProgressSteps(collect1, buttons1);
+
 test1.activate()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
