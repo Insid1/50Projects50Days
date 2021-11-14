@@ -92,11 +92,22 @@ class ProgressSteps { // js class for 1st exercies
     }
 }
 
+
+
 const collect1 = document.querySelector("body > div.wrapper-ex2 > div > ul");
 const buttons1 = document.querySelectorAll('body > div.wrapper-ex2 > div > button');
 
 let test1 = new ProgressSteps(collect1, buttons1);
 test1.activate()
+
+
+const searchButton = document.querySelector("span.search__icon");
+const searchSpace = document.querySelector(".search__input");
+
+searchButton.addEventListener('click', () => {
+    searchSpace.classList.toggle('search__active');
+})
+
 
 
 

@@ -146,7 +146,7 @@ body {
 }
 
 .progress-step ul::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: 50%;
@@ -199,6 +199,62 @@ body {
 }
 
 .progress-step button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search__input {
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  width: 100%;
+  padding-left: 0.5em;
+  border-radius: 0.5em;
+}
+
+.search__active {
+  width: 0%;
+  padding-left: 0em;
+}
+
+.search__search-space {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.search__icon {
+  cursor: pointer;
+  background: white;
+  font-size: 2em;
+  text-align: center;
+  margin-left: -0.7em;
+  border-radius: 0.5em;
+}
+
+.search__button {
+  height: 2rem;
+  padding: 0 1em;
+  text-transform: capitalize;
+  border-radius: 1em;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+.search__button:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }

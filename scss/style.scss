@@ -58,7 +58,7 @@ body {
         position: relative;
 
         &::before {
-            content: '';
+            content: "";
             position: absolute;
             left: 0;
             bottom: 50%;
@@ -104,9 +104,57 @@ body {
         border-radius: 50%;
         background-color: rgb(138, 164, 243);
         transition: all 0.1s linear;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.search {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &__label {
+    }
+
+    &__input {
+        // padding-left: 1em;
+        transition: all 0.2s linear;
+        width: 100%;
+        padding-left: 0.5em;
+        border-radius: 0.5em;
+    }
+
+    &__active {
+        width: 0%;
+        padding-left: 0em;
+    }
+
+    &__search-space {
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+    }
+
+    &__icon {
+        cursor: pointer;
+        background: white;
+        font-size: 2em;
+        text-align: center;
+        margin-left: -0.7em;
+        border-radius: 0.5em;
+    }
+
+    &__button {
+        height: 2rem;
+        padding: 0 1em;
+        text-transform: capitalize;
+        border-radius: 1em;
+        transition: all 0.1s linear;
+
         &:hover{
             transform: scale(1.1);
         }
-        
     }
 }
