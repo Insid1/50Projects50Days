@@ -1,8 +1,11 @@
 'use strict'
 
 class ExpandingCards { // js class for 1st exercies
-    constructor(slider) {
+    constructor(slider, popUpBlock = document.querySelector('.pop-up')) {
         this.slider = slider;
+
+        this.initialBlur = 1;
+        this.popUpBlock = popUpBlock;
     }
 
     makeWider() {
@@ -17,8 +20,30 @@ class ExpandingCards { // js class for 1st exercies
         })
     }
 
+    setBlur() {
+        for (let i of this.slider) {
+            i.style.filter = 'blur(1em)';
+        }
+    }
+
+    disposeBlur() {
+        for (let i of this.slider) {
+            let numHolder = 100;
+            const intervalId = setInterval(() => {
+                numHolder--;
+                if (numHolder <= 0) {
+                    clearInterval(intervalId)
+                    this.popUpBlock.style.display = 'none';
+                };
+                this.popUpBlock.textContent = 100 - numHolder + '%';
+                i.style.filter = `blur(${numHolder / 100}em)`
+            }, 30);
+        }
+    }
+
     activate() {
         this.makeWider();
+        this.disposeBlur();
     }
 }
 
@@ -26,15 +51,14 @@ let images = new ExpandingCards(document.querySelectorAll('.slider__inner-img'))
 images.activate();
 
 
-
 class ProgressSteps { // js class for 1st exercies
     constructor(innerUl, buttons) {
         this.innerUl = innerUl;
         this.buttons = buttons;
-        
+
         this.firstElement = 1;
         this.currentLineWidth = 0;
-        
+
     }
 
     calculateParamets() {
@@ -46,7 +70,7 @@ class ProgressSteps { // js class for 1st exercies
     }
 
     moveRight() {
-        if (this.firstElement === this.innerElements.length -1) return;
+        if (this.firstElement === this.innerElements.length - 1) return;
 
         this.firstElement += 1;
         this.innerElements[this.firstElement].classList.add('progress-step__active');
@@ -68,8 +92,8 @@ class ProgressSteps { // js class for 1st exercies
     }
 
     checkButtonsStatus() {
-        this.buttons[0].disabled = (this.currentLineWidth === 0) ?  true : false;
-        this.buttons[1].disabled = (this.currentLineWidth === this.stepWidth * (this.innerElements.length - 2)) ?  true : false;
+        this.buttons[0].disabled = (this.currentLineWidth === 0) ? true : false;
+        this.buttons[1].disabled = (this.currentLineWidth === this.stepWidth * (this.innerElements.length - 2)) ? true : false;
     }
 
     addEventsToButtons() {
@@ -93,20 +117,21 @@ class ProgressSteps { // js class for 1st exercies
 }
 
 
-
 const collect1 = document.querySelector("body > div.wrapper-ex2 > div > ul");
 const buttons1 = document.querySelectorAll('body > div.wrapper-ex2 > div > button');
 
 let test1 = new ProgressSteps(collect1, buttons1);
 test1.activate()
 
-
+// clickable search space
 const searchButton = document.querySelector("span.search__icon");
 const searchSpace = document.querySelector(".search__input");
 
 searchButton.addEventListener('click', () => {
     searchSpace.classList.toggle('search__active');
 })
+
+
 
 
 

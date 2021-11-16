@@ -104,6 +104,8 @@ body {
   width: 100%;
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
+  -webkit-filter: blur(1em);
+          filter: blur(1em);
 }
 
 .slider__active {
@@ -257,4 +259,25 @@ body {
 .search__button:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.pop-up {
+  position: fixed;
+  display: none;
+  color: white;
+  font-size: 2em;
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: 100;
+  width: 20%;
+  line-height: 4rem;
+  border-radius: 1rem;
+  text-align: center;
+  left: 50%;
+  bottom: 60%;
+  -webkit-transform: translateX(-50%) translateY(50%);
+          transform: translateX(-50%) translateY(50%);
+}
+
+.pop-up__active {
+  display: block;
 }
