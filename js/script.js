@@ -161,6 +161,29 @@ const contentBoxes = document.querySelectorAll('.scroll-animation__content-box')
 const animateScrollingContent = new ScrollAnimation(contentBoxes);
 animateScrollingContent.activate();
 
+const splitPages = document.querySelectorAll('.split-landing-page__info');
+
+const leftPart = splitPages[0];
+const rightPart = splitPages[1];
+
+leftPart.addEventListener('mouseenter', () => {
+    leftPart.classList.add('split-landing-page__active');
+})
+
+leftPart.addEventListener('mouseleave', () => {
+    leftPart.classList.remove('split-landing-page__active');
+})
+
+rightPart.addEventListener('mouseenter', () => {
+    rightPart.classList.add('split-landing-page__active');
+})
+
+rightPart.addEventListener('mouseleave', () => {
+    rightPart.classList.remove('split-landing-page__active');
+})
+
+
+
 
 
 
