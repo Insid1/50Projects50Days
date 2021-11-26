@@ -131,6 +131,45 @@ searchButton.addEventListener('click', () => {
     searchSpace.classList.toggle('search__active');
 })
 
+class ScrollAnimation {
+    constructor(collection) {
+        this.collection = collection;
+    }
+
+    checkBoxes() {
+        const triggerBottom = (window.innerHeight)/5 * 4;
+        this.collection.forEach(box => {
+            const boxTop = box.getBoundingClientRect().top
+        
+        if (boxTop < triggerBottom) {
+            box.classList.add('scroll-animation__active');
+        } else {
+            box.classList.remove('scroll-animation__active');
+        }
+        })
+    }
+
+    activate() {
+        window.addEventListener('scroll', () => {
+            this.checkBoxes();
+        });
+    }
+}
+
+const contentBoxes = document.querySelectorAll('.scroll-animation__content-box');
+
+const animateScrollingContent = new ScrollAnimation(contentBoxes);
+animateScrollingContent.activate();
+
+
+
+
+
+
+
+
+
+
 
 
 
