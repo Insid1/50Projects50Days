@@ -412,6 +412,68 @@ body {
   width: 250%;
 }
 
+.form-wave-animation {
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 2em auto;
+  padding: 1em 1em;
+  max-width: 400px;
+  color: white;
+  text-align: center;
+  border-radius: 1em;
+}
+
+.form-wave-animation a {
+  color: yellow;
+  text-decoration: underline;
+}
+
+.form-wave-animation__form-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  position: relative;
+  padding: 1em;
+  margin: 1.5em 0;
+}
+
+.form-wave-animation__form-control input {
+  background-color: transparent;
+  color: white;
+  border-bottom: white 2px solid;
+  width: 100%;
+  line-height: 2em;
+}
+
+.form-wave-animation__form-control label {
+  position: absolute;
+  padding: 10px;
+  left: 0;
+  bottom: 1em;
+}
+
+.form-wave-animation__btn {
+  line-height: 2em;
+  width: 30%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 1em;
+  margin-bottom: 1em;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.form-wave-animation__btn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.form-wave-animation__btn:active {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 @-webkit-keyframes spreading-circle {
   from {
     width: 100%;

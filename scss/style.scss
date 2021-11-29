@@ -279,12 +279,68 @@ body {
         &:hover {
             color: rgba(255, 255, 255, 0.6);
             background: rgba(0, 0, 0, 0.7);
-
         }
     }
 
     &__active {
         width: 250%;
+    }
+}
+
+.form-wave-animation {
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 2em auto;
+    padding: 1em 1em;
+    max-width: 400px;
+    color: white;
+    text-align: center;
+    border-radius: 1em;
+
+    a {
+        color: yellow;
+        text-decoration: underline;
+    }
+
+    &__form-control {
+        display: flex;
+        justify-content: left;
+        position: relative;
+        padding: 1em;
+        margin: 1.5em 0;
+
+        input {
+            background-color: transparent;
+            color: white;
+            border-bottom: white 2px solid;
+            width: 100%;
+            line-height: 2em;
+        }
+
+        label {
+            position: absolute;
+            padding: 10px;
+            left: 0;
+            bottom: 1em;
+            // transform: translateY(-1.5em);
+        }
+    }
+
+    &__btn {
+        line-height: 2em;
+        width: 30%;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 1em;
+        margin-bottom: 1em;
+        transition: all 0.1s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &:active {
+            color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(0, 0, 0, 0.6);
+        }
     }
 }
 

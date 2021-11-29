@@ -225,3 +225,5 @@ rightPart.addEventListener('mouseleave', () => {
 
 
 
+
+
