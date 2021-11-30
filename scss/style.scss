@@ -304,7 +304,6 @@ body {
     span {
         display: inline-block;
         transition: all 0.1s ease-in-out;
-
     }
 
     &__form-control {
@@ -350,6 +349,29 @@ body {
         &:active {
             color: rgba(255, 255, 255, 0.8);
             background-color: rgba(0, 0, 0, 0.6);
+        }
+    }
+}
+
+.sound-bar {
+    text-align: center;
+    &__btn {
+        margin: 1em;
+        background: rgba(255, 255, 0, 0.5);
+        padding: 1em;
+        border-radius: 1em;
+        text-transform: capitalize;
+        transition: all .1s linear;
+
+        &:hover {
+            background: rgba(255, 255, 0, 1);
+        }
+
+        &:active {
+            background: rgba(0, 0, 0, 0.7);
+            color: rgba(255, 255, 0, 1);
+            transform: scale(0.9);
+
         }
     }
 }

@@ -485,6 +485,31 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.sound-bar {
+  text-align: center;
+}
+
+.sound-bar__btn {
+  margin: 1em;
+  background: rgba(255, 255, 0, 0.5);
+  padding: 1em;
+  border-radius: 1em;
+  text-transform: capitalize;
+  -webkit-transition: all .1s linear;
+  transition: all .1s linear;
+}
+
+.sound-bar__btn:hover {
+  background: yellow;
+}
+
+.sound-bar__btn:active {
+  background: rgba(0, 0, 0, 0.7);
+  color: yellow;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
 @-webkit-keyframes spreading-circle {
   from {
     width: 100%;

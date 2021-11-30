@@ -267,9 +267,23 @@ const floatingForm = new FormWaveAnimation(labelsForms, inputForms);
 floatingForm.activate();
 
 
+// const sounds = ['rocket', 'heart', 'explosion', 'roar',]
+const soundsCollection = document.querySelectorAll('[data-sound-type]');
 
+soundsCollection.forEach((sound) => {
+    const btn = document.createElement('button');
+    btn.classList.add('sound-bar__btn');
 
+    btn.innerText = sound.getAttribute('data-sound-type');
 
+    const btns = document.querySelector('.sound-bar__buttons');
+    btns.appendChild(btn);
+
+    btn.addEventListener('click', () => {
+        sound.play();
+    })
+
+})
 
 
 
