@@ -266,8 +266,7 @@ const inputForms = document.querySelectorAll('.form-wave-animation__form-control
 const floatingForm = new FormWaveAnimation(labelsForms, inputForms);
 floatingForm.activate();
 
-
-// const sounds = ['rocket', 'heart', 'explosion', 'roar',]
+// ex 9. must be refactored and applied with OOP aproach
 const soundsCollection = document.querySelectorAll('[data-sound-type]');
 
 soundsCollection.forEach((sound) => {
@@ -284,6 +283,12 @@ soundsCollection.forEach((sound) => {
     })
 
 })
+
+
+// ex. 10;
+
+const joke = document.querySelector('.dads-joke__joke');
+const nextJokeBtn = document.querySelector('.dads-joke__btn');
 
 
 
