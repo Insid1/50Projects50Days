@@ -137,15 +137,15 @@ class ScrollAnimation {
     }
 
     checkBoxes() {
-        const triggerBottom = (window.innerHeight)/5 * 4;
+        const triggerBottom = (window.innerHeight) / 5 * 4;
         this.collection.forEach(box => {
             const boxTop = box.getBoundingClientRect().top
-        
-        if (boxTop < triggerBottom) {
-            box.classList.add('scroll-animation__active');
-        } else {
-            box.classList.remove('scroll-animation__active');
-        }
+
+            if (boxTop < triggerBottom) {
+                box.classList.add('scroll-animation__active');
+            } else {
+                box.classList.remove('scroll-animation__active');
+            }
         })
     }
 
@@ -182,12 +182,81 @@ rightPart.addEventListener('mouseleave', () => {
     rightPart.classList.remove('split-landing-page__active');
 })
 
+class FormWaveAnimation {
+    constructor(labelsForms, inputForms) {
+        this.labelsForms = labelsForms;
+        this.inputForms = inputForms;
+        this.counter = {};
+    }
+
+    representTextAsSpans() {
+        this.labelsForms.forEach((label) => {
+
+            this.counter[label.textContent] = 0;
+
+            label.innerHTML =
+                label.textContent.split('')
+                    .map(letter => `<span>${letter}</span>`)
+                    .join('');
+        })
+    }
+
+    collectionOfLetters(word) {
+        return word.querySelectorAll('span');
+    }
+
+    setClassInTime(collection, time = 50) {
+        let counterHandler = collection[0].parentElement.textContent;
+
+        if (this.counter[counterHandler] === collection.length) return;
+
+
+        let timeHandler = setTimeout(() => {
+            collection[this.counter[counterHandler]].classList.add('form-wave-animation__active');
+
+            this.counter[counterHandler]++;
+            return this.setClassInTime(collection);
+        }, time)
+    }
+
+    removeClassInTime(collection, time = 50) {
+        let counterHandler = collection[0].parentElement.textContent;
+
+        if (this.counter[counterHandler] === 0) return;
+        let timeHandler = setTimeout(() => {
+            collection[this.counter[counterHandler] - 1].classList.remove('form-wave-animation__active');
+            this.counter[counterHandler]--;
+            return this.removeClassInTime(collection);
+        }, time)
+    }
+
+    addEvents() {
+        this.inputForms.forEach((form, indx) => {
+            form.addEventListener('focus', () => {
+                this.setClassInTime(this.collectionOfLetters(this.labelsForms[indx]));
+            });
+
+            form.addEventListener('blur', () => {
+                this.removeClassInTime(this.collectionOfLetters(this.labelsForms[indx]));
+            });
+        })
+    }
+
+    activate() {
+        this.representTextAsSpans();
+        this.addEvents();
+    }
+}
 
 
 
+// floating labels in form 
+const labelsForms = document.querySelectorAll('.form-wave-animation__form-control > label');
+// inputs in form 
+const inputForms = document.querySelectorAll('.form-wave-animation__form-control > input');
 
-
-
+const floatingForm = new FormWaveAnimation(labelsForms, inputForms);
+floatingForm.activate();
 
 
 

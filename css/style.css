@@ -427,6 +427,12 @@ body {
   text-decoration: underline;
 }
 
+.form-wave-animation span {
+  display: inline-block;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
 .form-wave-animation__form-control {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -452,6 +458,11 @@ body {
   padding: 10px;
   left: 0;
   bottom: 1em;
+}
+
+.form-wave-animation__active {
+  -webkit-transform: translateY(-1.5em);
+          transform: translateY(-1.5em);
 }
 
 .form-wave-animation__btn {

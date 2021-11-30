@@ -301,6 +301,12 @@ body {
         text-decoration: underline;
     }
 
+    span {
+        display: inline-block;
+        transition: all 0.1s ease-in-out;
+
+    }
+
     &__form-control {
         display: flex;
         justify-content: left;
@@ -323,6 +329,10 @@ body {
             bottom: 1em;
             // transform: translateY(-1.5em);
         }
+    }
+
+    &__active {
+        transform: translateY(-1.5em);
     }
 
     &__btn {
