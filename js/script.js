@@ -123,13 +123,14 @@ const buttons1 = document.querySelectorAll('body > div.wrapper-ex2 > div > butto
 let test1 = new ProgressSteps(collect1, buttons1);
 test1.activate()
 
-// clickable search space
+// clickable search space START
 const searchButton = document.querySelector("span.search__icon");
 const searchSpace = document.querySelector(".search__input");
 
 searchButton.addEventListener('click', () => {
     searchSpace.classList.toggle('search__active');
 })
+// clickable search space END
 
 class ScrollAnimation {
     constructor(collection) {
@@ -161,26 +162,33 @@ const contentBoxes = document.querySelectorAll('.scroll-animation__content-box')
 const animateScrollingContent = new ScrollAnimation(contentBoxes);
 animateScrollingContent.activate();
 
-const splitPages = document.querySelectorAll('.split-landing-page__info');
+class SplitPages {
+    constructor(splitPages) {
+        this.splitPages = splitPages;
+    }
 
-const leftPart = splitPages[0];
-const rightPart = splitPages[1];
+    addEvents() {
+        this.splitPages.forEach(page => {
+            page.addEventListener('mouseenter', () => {
+                page.classList.add('split-landing-page__active');
+            });
+            page.addEventListener('mouseleave', () => {
+                page.classList.remove('split-landing-page__active');
+            });
+        })
+    }
 
-leftPart.addEventListener('mouseenter', () => {
-    leftPart.classList.add('split-landing-page__active');
-})
+    activate() {
+        this.addEvents();
+    }
+}
 
-leftPart.addEventListener('mouseleave', () => {
-    leftPart.classList.remove('split-landing-page__active');
-})
+const pages = document.querySelectorAll('.split-landing-page__info');
 
-rightPart.addEventListener('mouseenter', () => {
-    rightPart.classList.add('split-landing-page__active');
-})
+const pagesToSplit = new SplitPages(pages);
+pagesToSplit.activate();
 
-rightPart.addEventListener('mouseleave', () => {
-    rightPart.classList.remove('split-landing-page__active');
-})
+
 
 class FormWaveAnimation {
     constructor(labelsForms, inputForms) {
