@@ -361,7 +361,7 @@ body {
         padding: 1em;
         border-radius: 1em;
         text-transform: capitalize;
-        transition: all .1s linear;
+        transition: all 0.1s linear;
 
         &:hover {
             background: rgba(255, 255, 0, 1);
@@ -371,7 +371,6 @@ body {
             background: rgba(0, 0, 0, 0.7);
             color: rgba(255, 255, 0, 1);
             transform: scale(0.9);
-
         }
     }
 }
@@ -387,8 +386,10 @@ body {
     justify-content: space-around;
     padding: 1em;
     border-radius: 1em;
+
     &__title {
         text-transform: capitalize;
+        font-weight: 700;
     }
 
     &__joke {
@@ -402,10 +403,37 @@ body {
         padding: 0.5em;
         border-radius: 0.5em;
         background: rgba(162, 162, 255, 0.747);
-
     }
 }
 
+.key-codes {
+    display: flex;
+    justify-content: space-around;
+
+    &__box {
+        padding: 1em;
+        margin: 1em;
+        background-color: rgba(255, 255, 255, 0.5);
+        text-align: center;
+        border-radius: 0.5em;
+
+
+    }
+
+    &__title {
+    }
+
+    &__key {
+        padding: 1em;
+        margin: 1em;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 1em;
+        font-weight: 700;
+        border: 1px solid gray;
+
+
+    }
+}
 
 @keyframes spreading-circle {
     from {

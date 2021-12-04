@@ -290,6 +290,46 @@ soundsCollection.forEach((sound) => {
 const joke = document.querySelector('.dads-joke__joke');
 const nextJokeBtn = document.querySelector('.dads-joke__btn');
 
+generateJoke()
+
+async function generateJoke() {
+    const config = {
+        headers: {
+            Accept: 'application/json',
+        },
+    }
+
+    const res = await fetch('https://icanhazdadjoke.com', config);
+
+    // console.log(res);
+
+    const data = await res.json()
+    // console.log(data);
+
+    joke.textContent = data['joke'];
+}
+
+nextJokeBtn.addEventListener('click', generateJoke);
+
+
+// ex 11
+
+const eventBoxes = document.querySelectorAll('.key-codes__box');
+
+const eventKey = eventBoxes[0].children[1];
+const eventKeyCode = eventBoxes[1].children[1];
+const eventCode = eventBoxes[2].children[1];
+
+
+window.addEventListener('keydown', (eventObj) => {
+    console.log(eventObj.key === ' ');
+
+    eventKey.textContent = (eventObj.key === ' ') ? 'Space' : eventObj.key;
+
+    // eventKey.textContent = eventObj.key;
+    eventKeyCode.textContent = eventObj.keyCode;
+    eventCode.textContent = eventObj.code;
+})
 
 
 

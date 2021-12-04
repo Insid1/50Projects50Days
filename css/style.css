@@ -495,8 +495,8 @@ body {
   padding: 1em;
   border-radius: 1em;
   text-transform: capitalize;
-  -webkit-transition: all .1s linear;
-  transition: all .1s linear;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
 }
 
 .sound-bar__btn:hover {
@@ -533,6 +533,7 @@ body {
 
 .dads-joke__title {
   text-transform: capitalize;
+  font-weight: 700;
 }
 
 .dads-joke__joke {
@@ -546,6 +547,31 @@ body {
   padding: 0.5em;
   border-radius: 0.5em;
   background: rgba(162, 162, 255, 0.747);
+}
+
+.key-codes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.key-codes__box {
+  padding: 1em;
+  margin: 1em;
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  border-radius: 0.5em;
+}
+
+.key-codes__key {
+  padding: 1em;
+  margin: 1em;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 1em;
+  font-weight: 700;
+  border: 1px solid gray;
 }
 
 @-webkit-keyframes spreading-circle {
